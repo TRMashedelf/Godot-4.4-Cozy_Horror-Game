@@ -1,0 +1,1 @@
+Since the exe is not signed, something I'd have to pay microsoft to do, you will likely get a pop up when running it that says the file is from an unknown publisher. Just click 'more info' and then 'run anyway' to run the game.
