@@ -1,0 +1,249 @@
+[gd_scene load_steps=13 format=3 uid="uid://belbp4kncmbne"]
+
+[ext_resource type="PackedScene" uid="uid://cmlh2uecybfe6" path="res://Objects/Camera and monitors/Monitor1.tscn" id="1_jdwnr"]
+[ext_resource type="Shader" uid="uid://db1l7ucexks2q" path="res://Assets/Shaders/CRT.gdshader" id="2_eexsa"]
+[ext_resource type="PackedScene" uid="uid://2rlrx88dbupn" path="res://Objects/Cabin/cabin_floor_walls.tscn" id="3_nob5q"]
+[ext_resource type="PackedScene" uid="uid://by4c7wsylxh37" path="res://Objects/Cabin/Interactibles/light_switch.tscn" id="4_ta8yh"]
+[ext_resource type="PackedScene" uid="uid://dewqwu8hysfgn" path="res://Objects/Cabin/Furniture/light_bulb.tscn" id="5_3xi38"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eexsa"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nob5q"]
+albedo_color = Color(0.240028, 0.121305, 0.000220932, 1)
+metallic = 0.02
+roughness = 0.87
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ta8yh"]
+points = PackedVector3Array(-1.45426, -0.5, -0.5, 1.45426, 0.5, 0.5, 1.45426, 0.5, -0.5, -1.45426, 0.5, 0.5, 1.45426, -0.5, 0.5, 1.45426, -0.5, -0.5, -1.45426, 0.5, -0.5, -1.45426, -0.5, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eexsa"]
+viewport_path = NodePath("Security System/Camera1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nob5q"]
+shader = ExtResource("2_eexsa")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.13
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.052
+shader_parameter/noise_opacity = 0.305
+shader_parameter/noise_speed = 2.0
+shader_parameter/static_noise_intensity = 0.04
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.1
+shader_parameter/vignette_opacity = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_ta8yh"]
+size = Vector3(20, 0.25, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3xi38"]
+points = PackedVector3Array(10.1548, 0.35119, 10.1548, -10.1548, -0.28373, -10.1548, -10.1548, 0.35119, -10.1548, 10.1548, -0.28373, -10.1548, -10.1548, -0.28373, 10.1548, -10.1548, 0.35119, 10.1548, 10.1548, 0.35119, -10.1548, 10.1548, -0.28373, 10.1548)
+
+[node name="Home" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Desk (TEMP)" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.8722e-08, 0, 1, 0, 1, 0, -1.3434, 0, -4.37114e-08, -2.99462, 1.08198, 3.70795)
+mesh = SubResource("BoxMesh_eexsa")
+surface_material_override/0 = SubResource("StandardMaterial3D_nob5q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk (TEMP)"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk (TEMP)/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ta8yh")
+
+[node name="Security System" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.03251, 0.884852, 4.44479)
+
+[node name="Monitor1" parent="Security System" instance=ExtResource("1_jdwnr")]
+transform = Transform3D(0.356535, 0, 0.0748482, 0, 0.3645, 0, -0.0757838, 0, 0.352133, 2.11382, 1.09402, 5.96148)
+
+[node name="Sprite3D" type="Sprite3D" parent="Security System/Monitor1"]
+transform = Transform3D(0.368504, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0987968, -0.708152)
+cast_shadow = 0
+flip_h = true
+texture = SubResource("ViewportTexture_eexsa")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Security System/Monitor1"]
+transform = Transform3D(1, 0, 2.17259e-08, 0, 1, 0, -2.17259e-08, 0, 1, 0.0269823, 0, -1.5036)
+light_color = Color(0.87133, 1, 0.998357, 1)
+light_energy = 0.1
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="Monitor2" parent="Security System" instance=ExtResource("1_jdwnr")]
+transform = Transform3D(0.3645, 0, 0, 0, 0.3645, 0, 0, 0, 0.36, 0.872109, 1.09402, 6.09077)
+
+[node name="Sprite3D" type="Sprite3D" parent="Security System/Monitor2"]
+transform = Transform3D(0.368504, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0987968, -0.708152)
+cast_shadow = 0
+flip_h = true
+texture = SubResource("ViewportTexture_eexsa")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Security System/Monitor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.18293)
+light_color = Color(0.87133, 1, 0.998357, 1)
+light_energy = 0.1
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="Monitor3" parent="Security System" instance=ExtResource("1_jdwnr")]
+transform = Transform3D(0.35038, 0, -0.0992295, 0, 0.3645, 0, 0.10047, 0, 0.346054, -0.56202, 1.09402, 5.99584)
+
+[node name="Sprite3D" type="Sprite3D" parent="Security System/Monitor3"]
+transform = Transform3D(0.368504, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0987968, -0.708152)
+cast_shadow = 0
+flip_h = true
+texture = SubResource("ViewportTexture_eexsa")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Security System/Monitor3"]
+transform = Transform3D(1, 0, 2.17259e-08, 0, 1, 0, -2.17259e-08, 0, 1, 0.00303745, 0, -1.28062)
+light_color = Color(0.87133, 1, 0.998357, 1)
+light_energy = 0.1
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="Camera1" type="SubViewport" parent="Security System"]
+size = Vector2i(640, 400)
+
+[node name="Camera3D" type="Camera3D" parent="Security System/Camera1"]
+transform = Transform3D(0.859417, 0.0816223, -0.504718, -0.00369218, 0.98814, 0.153515, 0.511261, -0.130069, 0.849526, 0.552404, 2.95307, 0.251921)
+fov = 60.0
+
+[node name="Control" type="Control" parent="Security System/Camera1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Security System/Camera1/Control"]
+material = SubResource("ShaderMaterial_nob5q")
+custom_minimum_size = Vector2(640, 400)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cabin_Floor_walls" parent="." instance=ExtResource("3_nob5q")]
+
+[node name="Lights" type="Node3D" parent="Cabin_Floor_walls"]
+
+[node name="Light_Switch" parent="Cabin_Floor_walls/Lights" node_paths=PackedStringArray("Target") instance=ExtResource("4_ta8yh")]
+transform = Transform3D(1.66667, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, -9.489, 3.5, -2.401)
+skeleton = NodePath("../../..")
+Target = NodePath("../Light_bulb/OmniLight3D")
+Energy = 1.0
+
+[node name="Light_switch" parent="Cabin_Floor_walls/Lights" node_paths=PackedStringArray("Target") instance=ExtResource("4_ta8yh")]
+transform = Transform3D(-7.28523e-08, 0, -1.66667, 0, 1.66667, 0, 1.66667, 0, -7.28523e-08, -8.69708, 3.5, 1.27)
+skeleton = NodePath("../../..")
+Target = NodePath("../Light_bulb2/OmniLight3D2")
+Energy = 1.0
+
+[node name="Light_bulb" parent="Cabin_Floor_walls/Lights" instance=ExtResource("5_3xi38")]
+transform = Transform3D(-7.28523e-08, 0, 1.66667, 0, 1.66667, 0, -1.66667, 0, -7.28523e-08, -3.77848, 5.01563, -4.16304)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Cabin_Floor_walls/Lights/Light_bulb"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000260592, 0.0140393, 0.00771809)
+light_color = Color(1, 1, 0.776471, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="Light_bulb2" parent="Cabin_Floor_walls/Lights" instance=ExtResource("5_3xi38")]
+transform = Transform3D(-7.28523e-08, 0, 1.66667, 0, 1.66667, 0, -1.66667, 0, -7.28523e-08, -7.59245, 4.97995, 5.86776)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Cabin_Floor_walls/Lights/Light_bulb2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0019958, 0.00144601, -0.00175905)
+light_energy = 0.1
+light_indirect_energy = 0.1
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="Light_bulb4" parent="Cabin_Floor_walls/Lights" instance=ExtResource("5_3xi38")]
+transform = Transform3D(-7.28523e-08, 0, 1.66667, 0, 1.66667, 0, -1.66667, 0, -7.28523e-08, 6.1327, 4.97995, 5.17224)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Cabin_Floor_walls/Lights/Light_bulb4"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0019958, 0.00144601, -0.00175905)
+light_color = Color(1, 1, 0.776471, 1)
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="Light_bulb3" parent="Cabin_Floor_walls/Lights" instance=ExtResource("5_3xi38")]
+transform = Transform3D(-7.28523e-08, 0, 1.66667, 0, 1.66667, 0, -1.66667, 0, -7.28523e-08, -1.74776, 4.97995, 6.46209)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Cabin_Floor_walls/Lights/Light_bulb3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0019958, 0.00144601, -0.00175905)
+light_energy = 0.1
+light_indirect_energy = 0.1
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="Light_bulb5" parent="Cabin_Floor_walls/Lights" instance=ExtResource("5_3xi38")]
+transform = Transform3D(-7.28524e-08, 0, 1.66667, 0, 1.66667, 0, -1.66667, 0, -7.28524e-08, 4.75674, 4.97995, -0.971869)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Cabin_Floor_walls/Lights/Light_bulb5"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0019958, 0.00144601, -0.00175905)
+light_energy = 0.1
+light_indirect_energy = 0.1
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="Light_bulb6" parent="Cabin_Floor_walls/Lights" instance=ExtResource("5_3xi38")]
+transform = Transform3D(-7.28524e-08, 0, 1.66667, 0, 1.66667, 0, -1.66667, 0, -7.28524e-08, 5.38662, 4.97995, -6.43763)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Cabin_Floor_walls/Lights/Light_bulb6"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0019958, 0.00144601, -0.00175905)
+light_energy = 0.1
+light_indirect_energy = 0.1
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="Light_switch2" parent="Cabin_Floor_walls/Lights" node_paths=PackedStringArray("Target") instance=ExtResource("4_ta8yh")]
+transform = Transform3D(2.21864e-07, 0, -1.66667, 0, 1.66667, 0, 1.66667, 0, 2.21864e-07, -2.146, 3.5, 3.529)
+Target = NodePath("../Light_bulb3/OmniLight3D2")
+Energy = 1.0
+
+[node name="Light_switch3" parent="Cabin_Floor_walls/Lights" node_paths=PackedStringArray("Target") instance=ExtResource("4_ta8yh")]
+transform = Transform3D(1.66667, 0, 7.28523e-08, 0, 1.66667, 0, -7.28523e-08, 0, 1.66667, 1.7476, 3.5, 3.503)
+skeleton = NodePath("../Light_bulb4")
+Target = NodePath("../Light_bulb4/OmniLight3D2")
+Energy = 1.0
+
+[node name="Light_switch4" parent="Cabin_Floor_walls/Lights" node_paths=PackedStringArray("Target") instance=ExtResource("4_ta8yh")]
+transform = Transform3D(-1.66667, 0, -1.45705e-07, 0, 1.66667, 0, 1.45705e-07, 0, -1.66667, 1.441, 3.5, -2.43514)
+skeleton = NodePath("../..")
+Target = NodePath("../Light_bulb5/OmniLight3D2")
+Energy = 1.0
+
+[node name="Light_switch5" parent="Cabin_Floor_walls/Lights" node_paths=PackedStringArray("Target") instance=ExtResource("4_ta8yh")]
+transform = Transform3D(-1.66667, 0, -1.45705e-07, 0, 1.66667, 0, 1.45705e-07, 0, -1.66667, 1.441, 3.5, -3.13172)
+skeleton = NodePath("../..")
+Target = NodePath("../Light_bulb6/OmniLight3D2")
+Energy = 1.0
+
+[node name="Roof (TEMP)" type="MeshInstance3D" parent="Cabin_Floor_walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.41391, 0)
+mesh = SubResource("BoxMesh_ta8yh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cabin_Floor_walls/Roof (TEMP)"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabin_Floor_walls/Roof (TEMP)/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3xi38")

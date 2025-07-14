@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dewqwu8hysfgn"]
+
+[ext_resource type="PackedScene" uid="uid://4q3xwjttkl5s" path="res://Assets/Models/Light_bulb.glb" id="1_yhmvv"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_l1fbe"]
+transparency = 1
+albedo_color = Color(1, 1, 0.878431, 0.145098)
+
+[node name="Light_bulb" instance=ExtResource("1_yhmvv")]
+
+[node name="Sphere" parent="." index="0"]
+surface_material_override/0 = SubResource("ORMMaterial3D_l1fbe")
