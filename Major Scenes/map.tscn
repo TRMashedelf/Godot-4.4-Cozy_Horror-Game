@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfkwjipf6ubmj"]
+
+[ext_resource type="PackedScene" uid="uid://belbp4kncmbne" path="res://Major Scenes/home.tscn" id="1_gpjc3"]
+[ext_resource type="PackedScene" uid="uid://d30etgdp2rxgl" path="res://Major Scenes/terrain_3d.tscn" id="2_iam6h"]
+[ext_resource type="PackedScene" uid="uid://cmlh2uecybfe6" path="res://Objects/Camera and monitors/Monitor1.tscn" id="3_qy2ys"]
+[ext_resource type="Shader" uid="uid://db1l7ucexks2q" path="res://Assets/Shaders/CRT.gdshader" id="4_rf8ge"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fuc2v"]
+viewport_path = NodePath("Security System/Camera1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wwrr6"]
+shader = ExtResource("4_rf8ge")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.13
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.052
+shader_parameter/noise_opacity = 0.305
+shader_parameter/noise_speed = 2.0
+shader_parameter/static_noise_intensity = 0.04
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.1
+shader_parameter/vignette_opacity = 0.1
+
+[node name="Map" type="Node3D"]
+
+[node name="Home" parent="." instance=ExtResource("1_gpjc3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.10354, -0.485508, -14.8615)
+
+[node name="Terrain3D" parent="." instance=ExtResource("2_iam6h")]
+
+[node name="Security System" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -8.50484, 0.411393, -23.9075)
+
+[node name="Monitor1" parent="Security System" instance=ExtResource("3_qy2ys")]
+transform = Transform3D(0.356535, 0, 0.0748482, 0, 0.3645, 0, -0.0757838, 0, 0.352133, 2.11382, 1.09402, 5.96148)
+
+[node name="Sprite3D" type="Sprite3D" parent="Security System/Monitor1"]
+transform = Transform3D(0.368504, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0987968, -0.708152)
+cast_shadow = 0
+flip_h = true
+texture = SubResource("ViewportTexture_fuc2v")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Security System/Monitor1"]
+transform = Transform3D(1, 0, 2.17259e-08, 0, 1, 0, -2.17259e-08, 0, 1, 0.0269823, 0, -1.5036)
+light_color = Color(0.87133, 1, 0.998357, 1)
+light_energy = 0.1
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="Monitor2" parent="Security System" instance=ExtResource("3_qy2ys")]
+transform = Transform3D(0.3645, 0, 0, 0, 0.3645, 0, 0, 0, 0.36, 0.872109, 1.09402, 6.09077)
+
+[node name="Sprite3D" type="Sprite3D" parent="Security System/Monitor2"]
+transform = Transform3D(0.368504, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0987968, -0.708152)
+cast_shadow = 0
+flip_h = true
+texture = SubResource("ViewportTexture_fuc2v")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Security System/Monitor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.18293)
+light_color = Color(0.87133, 1, 0.998357, 1)
+light_energy = 0.1
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="Monitor3" parent="Security System" instance=ExtResource("3_qy2ys")]
+transform = Transform3D(0.35038, 0, -0.0992295, 0, 0.3645, 0, 0.10047, 0, 0.346054, -0.56202, 1.09402, 5.99584)
+
+[node name="Sprite3D" type="Sprite3D" parent="Security System/Monitor3"]
+transform = Transform3D(0.368504, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0987968, -0.708152)
+cast_shadow = 0
+flip_h = true
+texture = SubResource("ViewportTexture_fuc2v")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Security System/Monitor3"]
+transform = Transform3D(1, 0, 2.17259e-08, 0, 1, 0, -2.17259e-08, 0, 1, 0.00303745, 0, -1.28062)
+light_color = Color(0.87133, 1, 0.998357, 1)
+light_energy = 0.1
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="Camera1" type="SubViewport" parent="Security System"]
+size = Vector2i(640, 400)
+
+[node name="Camera3D" type="Camera3D" parent="Security System/Camera1"]
+transform = Transform3D(0.859417, 0.0816223, -0.504717, -0.00369218, 0.98814, 0.153514, 0.511261, -0.130069, 0.849526, -3.47917, 2.2275, -14.5659)
+fov = 60.0
+
+[node name="Control" type="Control" parent="Security System/Camera1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Security System/Camera1/Control"]
+material = SubResource("ShaderMaterial_wwrr6")
+custom_minimum_size = Vector2(640, 400)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

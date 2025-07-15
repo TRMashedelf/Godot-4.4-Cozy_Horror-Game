@@ -85,6 +85,6 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 data_directory = "res://Terrain"
 material = SubResource("Terrain3DMaterial_tmc11")
 assets = SubResource("Terrain3DAssets_2vav3")
-mesh_lods = 5
+mesh_lods = 3
 top_level = true
 metadata/_edit_lock_ = true

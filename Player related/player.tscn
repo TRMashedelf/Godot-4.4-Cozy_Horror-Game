@@ -14,9 +14,11 @@ script = ExtResource("1_jexhv")
 mouse_sensitivity = 0.004
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_tpwp3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jexhv")
 
 [node name="Camera3D" type="Camera3D" parent="."]
