@@ -4,6 +4,8 @@ extends Control
 @onready var window_resolution = $CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/HBoxContainer/Resolution_option
 @onready var fov = $CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Fov/FOV_slider
 @onready var fov_label = $CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Fov/FOV_Label
+@onready var view_distance = $CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/View_distance/ViewDistance_Slider
+@onready var view_distance_label = $CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/View_distance/ViewDistance_label
 
 
 @onready var master = $CenterContainer/MarginContainer/VBoxContainer/TabContainer/Audio/Master/Master_Slider
@@ -50,6 +52,8 @@ func _ready() -> void:
 	
 	fov.set_value_no_signal(Globals.player_FOV)
 	fov_label.text = str(int(Globals.player_FOV))
+	view_distance.set_value_no_signal(Globals.view_distance)
+	view_distance_label.text = str(int(Globals.view_distance)) + "m"
 	
 	master.set_value_no_signal(Globals.audio_masterVolume)
 	sfx.set_value_no_signal(Globals.audio_SFXVolume)
@@ -129,5 +133,12 @@ func _on_resolution_option_item_selected(index: int) -> void:
 func _on_fov_slider_value_changed(value: float) -> void:
 	Globals.player_FOV = value
 	fov_label.text = str(int(value))
+	Globals.save_settings()
+	Globals.apply_settings()
+
+
+func _on_view_distance_slider_value_changed(value: float) -> void:
+	Globals.view_distance = value
+	view_distance_label.text = str(int(value)) + "m"
 	Globals.save_settings()
 	Globals.apply_settings()

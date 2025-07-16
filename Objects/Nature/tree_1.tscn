@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://v80rcwht5qai"]
+[gd_scene load_steps=10 format=3 uid="uid://v80rcwht5qai"]
 
 [ext_resource type="PackedScene" uid="uid://baahjql3otme0" path="res://Assets/Models/Tree1.glb" id="1_5boij"]
 [ext_resource type="Texture2D" uid="uid://clws0n77evb2r" path="res://Assets/Textures/pine_bark_diff_2k.png" id="2_8o2xu"]
+[ext_resource type="Script" uid="uid://c5hlfwe6irx2t" path="res://Objects/Nature/Distance_culling.gd" id="2_ndiy0"]
 [ext_resource type="Texture2D" uid="uid://cujowqwb5dwp5" path="res://Assets/Textures/pine_bark_ao_2k.png" id="3_62rpn"]
 [ext_resource type="Texture2D" uid="uid://bnj5vyffdia0p" path="res://Assets/Textures/pine_bark_nor_gl_2k.png" id="4_ndiy0"]
 [ext_resource type="Texture2D" uid="uid://dr5x1alqc35ue" path="res://Assets/Textures/pine_bark_rough_2k.png" id="5_4g1vd"]
@@ -20,6 +21,7 @@ uv1_triplanar = true
 height = 8.0
 
 [node name="Tree1" instance=ExtResource("1_5boij")]
+script = ExtResource("2_ndiy0")
 
 [node name="Tree1" parent="." index="0"]
 lod_bias = 0.8

@@ -93,7 +93,7 @@ omni_range = 1.0
 [node name="Camera1" type="SubViewport" parent="Security System"]
 size = Vector2i(640, 400)
 
-[node name="Camera3D" type="Camera3D" parent="Security System/Camera1"]
+[node name="Camera3D" type="Camera3D" parent="Security System/Camera1" groups=["Cameras"]]
 transform = Transform3D(0.859417, 0.0816223, -0.504717, -0.00369218, 0.98814, 0.153514, 0.511261, -0.130069, 0.849526, -3.47917, 2.2275, -14.5659)
 fov = 60.0
 

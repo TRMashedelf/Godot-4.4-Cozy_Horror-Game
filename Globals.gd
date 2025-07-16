@@ -14,8 +14,10 @@ extends Node
 @export var audio_ambientVolume: int
 @export var audio_musicVolume: int
 
+@export var view_distance: float
 
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	load_settings()
 	
@@ -31,6 +33,7 @@ func load_settings():
 	window_type = config.get_value("graphics", "window_type", "borderless")
 	window_resolution = config.get_value("graphics", "window_resolution", "1920x1080")
 	player_FOV = config.get_value("graphics", "player_FOV", 90.0)
+	view_distance = config.get_value("graphics", "view_distance", 75.0)
 
 	audio_masterVolume = config.get_value("audio", "master_volume", 100)
 	audio_SFXVolume = config.get_value("audio", "sfx_volume", 100)
@@ -43,6 +46,7 @@ func save_settings():
 	config.set_value("graphics", "window_type", window_type)
 	config.set_value("graphics", "window_resolution", window_resolution)
 	config.set_value("graphics", "player_FOV", player_FOV)
+	config.set_value("graphics", "view_distance", view_distance)
 	
 	config.set_value("controls", "player_mouseSensitivity", player_mouseSensitivity)
 	

@@ -156,6 +156,30 @@ tick_count = 100
 [node name="FOV_Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Fov"]
 layout_mode = 2
 
+[node name="View_distance" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/View_distance"]
+layout_mode = 2
+text = "View Distance:"
+
+[node name="VSeparator" type="VSeparator" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/View_distance"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="ViewDistance_Slider" type="HSlider" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/View_distance"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+min_value = 40.0
+max_value = 140.0
+value = 90.0
+rounded = true
+tick_count = 100
+
+[node name="ViewDistance_label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/View_distance"]
+layout_mode = 2
+
 [node name="Audio" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
@@ -296,6 +320,7 @@ tick_count = 100
 [connection signal="item_selected" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Window mode/WindowMode_option" to="." method="_on_window_mode_option_item_selected"]
 [connection signal="item_selected" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/HBoxContainer/Resolution_option" to="." method="_on_resolution_option_item_selected"]
 [connection signal="value_changed" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Fov/FOV_slider" to="." method="_on_fov_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/View_distance/ViewDistance_Slider" to="." method="_on_view_distance_slider_value_changed"]
 [connection signal="value_changed" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Audio/Master/Master_Slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Audio/SFX/SFX_Slider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Audio/Ambient/Ambient_Slider" to="." method="_on_ambient_slider_value_changed"]
