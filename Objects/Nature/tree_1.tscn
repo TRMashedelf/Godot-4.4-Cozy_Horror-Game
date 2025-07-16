@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://v80rcwht5qai"]
+
+[ext_resource type="PackedScene" uid="uid://baahjql3otme0" path="res://Assets/Models/Tree1.glb" id="1_5boij"]
+[ext_resource type="Texture2D" uid="uid://clws0n77evb2r" path="res://Assets/Textures/pine_bark_diff_2k.png" id="2_8o2xu"]
+[ext_resource type="Texture2D" uid="uid://cujowqwb5dwp5" path="res://Assets/Textures/pine_bark_ao_2k.png" id="3_62rpn"]
+[ext_resource type="Texture2D" uid="uid://bnj5vyffdia0p" path="res://Assets/Textures/pine_bark_nor_gl_2k.png" id="4_ndiy0"]
+[ext_resource type="Texture2D" uid="uid://dr5x1alqc35ue" path="res://Assets/Textures/pine_bark_rough_2k.png" id="5_4g1vd"]
+[ext_resource type="ArrayOccluder3D" uid="uid://5ullkvy2t4st" path="res://Objects/Nature/tree_1.occ" id="6_62rpn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_th7wp"]
+albedo_texture = ExtResource("2_8o2xu")
+roughness_texture = ExtResource("5_4g1vd")
+normal_enabled = true
+normal_texture = ExtResource("4_ndiy0")
+ao_enabled = true
+ao_texture = ExtResource("3_62rpn")
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8o2xu"]
+height = 8.0
+
+[node name="Tree1" instance=ExtResource("1_5boij")]
+
+[node name="Tree1" parent="." index="0"]
+lod_bias = 0.8
+surface_material_override/0 = SubResource("StandardMaterial3D_th7wp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.043, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("CylinderShape3D_8o2xu")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.91701, 0)
+occluder = ExtResource("6_62rpn")
