@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=3 uid="uid://c67xicifvhqvv"]
+
+[ext_resource type="PackedScene" uid="uid://cto8741lshux8" path="res://Assets/Models/Window.glb" id="1_bv0wl"]
+[ext_resource type="Script" uid="uid://dpc4mybo5whtg" path="res://Objects/Cabin/Interactibles/window.gd" id="2_yt4jx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv0wl"]
+albedo_color = Color(0.67069, 0.67069, 0.67069, 1)
+metallic = 1.0
+roughness = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yt4jx"]
+albedo_color = Color(0.67069, 0.67069, 0.67069, 1)
+metallic = 1.0
+roughness = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy3il"]
+transparency = 1
+albedo_color = Color(0.890521, 1, 0.999221, 0.0392157)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bv0wl"]
+points = PackedVector3Array(-0.999951, -1, -1, 0.99997, 1, 1, 0.99997, 1, -1, -1.01582, 1.01587, 1.01587, 0.99997, -1, 1, -0.999951, 1, -1, -0.999951, -1, 1, 0.99997, -1, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qk7m"]
+albedo_color = Color(0.67069, 0.67069, 0.67069, 1)
+metallic = 1.0
+roughness = 0.55
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yt4jx"]
+points = PackedVector3Array(-0.999951, -1, -1, 0.99997, 1, 1, 0.99997, 1, -1, -1.01582, 1.01587, 1.01587, 0.99997, -1, 1, -0.999951, 1, -1, -0.999951, -1, 1, 0.99997, -1, -1)
+
+[sub_resource type="Animation" id="Animation_rwj5t"]
+resource_name = "Close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowDowner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.1, 0.446958, 0), Vector3(-0.1, -0.473003, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h4xqv"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowDowner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.1, -0.473003, 0), Vector3(-0.1, 0.446958, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wy3il"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WindowDowner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.1, 0.446958, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u8r81"]
+_data = {
+&"Close": SubResource("Animation_rwj5t"),
+&"Open": SubResource("Animation_h4xqv"),
+&"RESET": SubResource("Animation_wy3il")
+}
+
+[node name="Window" instance=ExtResource("1_bv0wl")]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
+script = ExtResource("2_yt4jx")
+
+[node name="WindowFrame" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bv0wl")
+
+[node name="WindowUpper" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yt4jx")
+surface_material_override/1 = SubResource("StandardMaterial3D_wy3il")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WindowUpper" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowUpper/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_bv0wl")
+
+[node name="WindowDowner" parent="." index="2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.5, 0, 0, 0, 1.87904, -0.1, 0.446958, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_8qk7m")
+surface_material_override/1 = SubResource("StandardMaterial3D_wy3il")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WindowDowner" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowDowner/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_yt4jx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_u8r81")
+}
