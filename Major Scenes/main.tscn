@@ -16,6 +16,17 @@ sky = SubResource("Sky_3fgge")
 ambient_light_sky_contribution = 0.05
 tonemap_mode = 2
 glow_enabled = true
+fog_mode = 1
+fog_light_energy = 0.2
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 10.0
+fog_depth_curve = 0.31864
+fog_depth_begin = 30.0
+fog_depth_end = 90.0
+volumetric_fog_density = 0.01
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_sky_affect = 0.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_7oxdu")
