@@ -1,0 +1,166 @@
+[gd_scene load_steps=21 format=3 uid="uid://da7trne6ncm43"]
+
+[ext_resource type="PackedScene" uid="uid://b8tamha47bfcq" path="res://Assets/Models/Door1.glb" id="1_xq2b1"]
+[ext_resource type="Script" uid="uid://l1x0g4bslyec" path="res://Objects/Cabin/Interactibles/door_1.gd" id="2_kby3i"]
+[ext_resource type="Texture2D" uid="uid://dr5niw455k352" path="res://Assets/Textures/white_plaster_02_ao_1k.png" id="3_lg2ed"]
+[ext_resource type="Texture2D" uid="uid://d23gxwby0h6jo" path="res://Assets/Textures/white_plaster_02_nor_gl_1k.png" id="4_pg47m"]
+[ext_resource type="Texture2D" uid="uid://cqohkorf043p5" path="res://Assets/Textures/white_plaster_02_rough_1k.png" id="5_288ea"]
+[ext_resource type="Texture2D" uid="uid://crs02v8yer70d" path="res://Assets/Textures/raw_plank_wall_diff_2k.png" id="6_4agv0"]
+[ext_resource type="Texture2D" uid="uid://btfqcevyi23so" path="res://Assets/Textures/raw_plank_wall_ao_2k.png" id="7_kby3i"]
+[ext_resource type="Texture2D" uid="uid://bxjoycs7022uw" path="res://Assets/Textures/raw_plank_wall_nor_gl_2k.png" id="8_gimxh"]
+[ext_resource type="Texture2D" uid="uid://7slk1ho64w1" path="res://Assets/Textures/raw_plank_wall_rough_2k.png" id="9_tjrgg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kf5x"]
+albedo_texture = ExtResource("6_4agv0")
+roughness_texture = ExtResource("9_tjrgg")
+normal_enabled = true
+normal_texture = ExtResource("8_gimxh")
+ao_enabled = true
+ao_texture = ExtResource("7_kby3i")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4agv0"]
+albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
+roughness_texture = ExtResource("5_288ea")
+normal_enabled = true
+normal_scale = 0.4
+normal_texture = ExtResource("4_pg47m")
+ao_enabled = true
+ao_texture = ExtResource("3_lg2ed")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kby3i"]
+transparency = 1
+albedo_color = Color(0.890521, 1, 0.999221, 0.0392157)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gimxh"]
+albedo_color = Color(1, 0.752941, 0, 1)
+metallic = 1.0
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjrgg"]
+albedo_color = Color(1, 0.752941, 0, 1)
+metallic = 1.0
+roughness = 0.25
+
+[sub_resource type="Animation" id="Animation_4agv0"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rtjl6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lg2ed"]
+resource_name = "Close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kby3i"]
+resource_name = "Open_invert"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gimxh"]
+resource_name = "Close_invert"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kby3i"]
+_data = {
+&"Close": SubResource("Animation_lg2ed"),
+&"Close_invert": SubResource("Animation_gimxh"),
+&"Open": SubResource("Animation_4agv0"),
+&"Open_invert": SubResource("Animation_kby3i"),
+&"RESET": SubResource("Animation_rtjl6")
+}
+
+[node name="Door1" instance=ExtResource("1_xq2b1")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("2_kby3i")
+
+[node name="DoorFrame" parent="." index="0"]
+transform = Transform3D(0.278991, 0, 0, 0, 4.59157, 0, 0, 0, 2.33467, 0, 0.0957656, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_3kf5x")
+
+[node name="Hinge" parent="." index="1"]
+transform = Transform3D(0.0555657, 0, 0, 0, 0.244502, 0, 0, 0, 0.0555657, 0, 0, 1.99854)
+
+[node name="Door" parent="Hinge" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4agv0")
+surface_material_override/1 = SubResource("StandardMaterial3D_kby3i")
+
+[node name="Knobs" parent="Hinge/Door" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gimxh")
+
+[node name="Knob" parent="Hinge/Door/Knobs" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tjrgg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_kby3i")
+}
+
+[node name="Timer" type="Timer" parent="." index="3"]
+wait_time = 0.5
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
