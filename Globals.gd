@@ -16,10 +16,14 @@ extends Node
 
 @export var view_distance: float
 
+enum MenuState { NONE, MAIN, PAUSE, SETTINGS }
+@export var current_menu := MenuState.NONE
+
 
 
 func _ready() -> void:
 	load_settings()
+	current_menu = MenuState.NONE
 	
 
 

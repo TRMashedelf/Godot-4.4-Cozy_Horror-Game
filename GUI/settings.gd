@@ -19,6 +19,8 @@ extends Control
 
 @onready var mouse_sensitivity = $"CenterContainer/MarginContainer/VBoxContainer/TabContainer/Controls/Mouse Sensitivity/MouseSensitivity_Slider"
 
+@onready var ui_controller = get_parent()
+
 func _ready() -> void:
 	if Globals.window_type == "windowed":
 		window_mode.select(0)
@@ -142,3 +144,8 @@ func _on_view_distance_slider_value_changed(value: float) -> void:
 	view_distance_label.text = str(int(value)) + "m"
 	Globals.save_settings()
 	Globals.apply_settings()
+
+
+func _on_button_pressed() -> void:
+	ui_controller.open_pause_gui()
+		

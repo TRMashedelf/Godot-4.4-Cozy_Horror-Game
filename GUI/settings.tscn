@@ -9,7 +9,7 @@ font_size = 32
 outline_size = 3
 outline_color = Color(0.95158, 0.95158, 0.95158, 1)
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" groups=["GUI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,6 +49,10 @@ horizontal_alignment = 1
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pause menu"
 
 [node name="TabContainer" type="TabContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -317,6 +321,7 @@ value = 100.0
 rounded = true
 tick_count = 100
 
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Window mode/WindowMode_option" to="." method="_on_window_mode_option_item_selected"]
 [connection signal="item_selected" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/HBoxContainer/Resolution_option" to="." method="_on_resolution_option_item_selected"]
 [connection signal="value_changed" from="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Fov/FOV_slider" to="." method="_on_fov_slider_value_changed"]

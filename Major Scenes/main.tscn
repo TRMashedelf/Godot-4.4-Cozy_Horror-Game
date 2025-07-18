@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bueae4ug4ilik"]
+[gd_scene load_steps=12 format=3 uid="uid://bueae4ug4ilik"]
 
 [ext_resource type="Script" uid="uid://cxm31ay3wqdld" path="res://Major Scenes/main.gd" id="1_7oxdu"]
 [ext_resource type="Script" uid="uid://b2odnh707kmej" path="res://addons/DayNightCycle/DayNightCycle.gd" id="2_7oxdu"]
@@ -6,6 +6,9 @@
 [ext_resource type="Material" uid="uid://wyikf3yxoy6x" path="res://addons/DayNightCycle/Sky_Day.tres" id="2_f0s4u"]
 [ext_resource type="PackedScene" uid="uid://olioj2wisgi0" path="res://Test stuff/test_object_interactor.tscn" id="3_476l7"]
 [ext_resource type="PackedScene" uid="uid://dfkwjipf6ubmj" path="res://Major Scenes/map.tscn" id="6_7oxdu"]
+[ext_resource type="PackedScene" uid="uid://eihb63i65s1q" path="res://GUI/settings.tscn" id="7_1mf3d"]
+[ext_resource type="Script" uid="uid://1uktbaeqswfo" path="res://GUI/ui.gd" id="7_hfan6"]
+[ext_resource type="PackedScene" uid="uid://ctdnywdqebm1d" path="res://GUI/pause_menu.tscn" id="8_hfan6"]
 
 [sub_resource type="Sky" id="Sky_3fgge"]
 sky_material = ExtResource("2_f0s4u")
@@ -61,3 +64,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58811, 1.11986, -16.8036)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.940696, 1.528, -17.8302)
 
 [node name="Map" parent="." instance=ExtResource("6_7oxdu")]
+
+[node name="UI" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_hfan6")
+
+[node name="Settings" parent="UI" instance=ExtResource("7_1mf3d")]
+visible = false
+layout_mode = 1
+
+[node name="Pause Menu" parent="UI" instance=ExtResource("8_hfan6")]
+visible = false
+layout_mode = 1
