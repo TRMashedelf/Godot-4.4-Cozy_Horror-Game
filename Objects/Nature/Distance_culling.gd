@@ -3,7 +3,7 @@ extends Node3D
 @onready var distance_player_begin_culling : float = Globals.view_distance
 @onready var distance_camera_begin_culling : float = Globals.view_distance / 2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !is_instance_valid(get_tree().get_first_node_in_group("Player")):
 		return
 	

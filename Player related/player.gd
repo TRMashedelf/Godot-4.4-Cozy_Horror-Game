@@ -83,7 +83,7 @@ func update_settings():
 
 func esc_update():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	await get_tree().create_timer(0.05)
+	get_tree().create_timer(0.05)
 	if Globals.current_menu == Globals.MenuState.NONE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if Globals.window_type == "fullscreen" and not Globals.current_menu == Globals.MenuState.NONE:

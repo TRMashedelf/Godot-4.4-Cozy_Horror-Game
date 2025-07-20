@@ -160,6 +160,10 @@ tick_count = 100
 [node name="FOV_Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics/Fov"]
 layout_mode = 2
 
+[node name="HSeparator4" type="HSeparator" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
 [node name="View_distance" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/TabContainer/Graphics"]
 layout_mode = 2
 alignment = 1

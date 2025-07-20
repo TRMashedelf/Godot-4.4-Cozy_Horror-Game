@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://belbp4kncmbne"]
+[gd_scene load_steps=11 format=3 uid="uid://belbp4kncmbne"]
 
 [ext_resource type="PackedScene" uid="uid://2rlrx88dbupn" path="res://Objects/Cabin/cabin_floor_walls.tscn" id="3_nob5q"]
 [ext_resource type="PackedScene" uid="uid://c67xicifvhqvv" path="res://Objects/Cabin/Interactibles/window.tscn" id="4_3xi38"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dewqwu8hysfgn" path="res://Objects/Cabin/Furniture/light_bulb.tscn" id="5_3xi38"]
 [ext_resource type="PackedScene" uid="uid://da7trne6ncm43" path="res://Objects/Cabin/Interactibles/door_1.tscn" id="5_ckmlx"]
 [ext_resource type="PackedScene" uid="uid://dmukrypiobadj" path="res://Objects/Cabin/Interactibles/DoubleDoor.tscn" id="6_ckmlx"]
+[ext_resource type="PackedScene" uid="uid://dsapx2rys4kd8" path="res://Objects/Cabin/Interactibles/door_2.tscn" id="7_m120p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_eexsa"]
 size = Vector3(3, 1, 1)
@@ -163,3 +164,6 @@ invert = true
 [node name="DoubleDoor" parent="Cabin_Floor_walls/Doors" instance=ExtResource("6_ckmlx")]
 transform = Transform3D(0.254691, 0, -2.66454e-15, 0, 0.256886, 0, 3.55271e-15, 0, 0.217394, 5.78043, 1.76902, -3.89903)
 invert = true
+
+[node name="Door2" parent="Cabin_Floor_walls/Doors" instance=ExtResource("7_m120p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.44041, 1.85382, 0.493261)

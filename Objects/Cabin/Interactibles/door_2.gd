@@ -1,11 +1,9 @@
 extends Node3D
 
-
 @onready var animPlayer = $AnimationPlayer
 @onready var timer = $Timer
 
 @export var Is_Open: bool
-@export var invert: bool
 
 func _ready():
 	update(Is_Open)
@@ -23,15 +21,10 @@ func interact(interaction: String) -> void:
 
 func update(On_off: bool):
 	if On_off == true:
-		if invert == false:
-			animPlayer.play("Open")
-		else:
-			animPlayer.play("Open_invert")
+		animPlayer.play("Open")
 	else:
-		if invert == false:
-			animPlayer.play("Close")
-		else:
-			animPlayer.play("Close_invert")
+		animPlayer.play("Close")
+
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
