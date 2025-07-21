@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://belbp4kncmbne"]
+[gd_scene load_steps=12 format=3 uid="uid://belbp4kncmbne"]
 
 [ext_resource type="PackedScene" uid="uid://2rlrx88dbupn" path="res://Objects/Cabin/cabin_floor_walls.tscn" id="3_nob5q"]
 [ext_resource type="PackedScene" uid="uid://c67xicifvhqvv" path="res://Objects/Cabin/Interactibles/window.tscn" id="4_3xi38"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://da7trne6ncm43" path="res://Objects/Cabin/Interactibles/door_1.tscn" id="5_ckmlx"]
 [ext_resource type="PackedScene" uid="uid://dmukrypiobadj" path="res://Objects/Cabin/Interactibles/DoubleDoor.tscn" id="6_ckmlx"]
 [ext_resource type="PackedScene" uid="uid://dsapx2rys4kd8" path="res://Objects/Cabin/Interactibles/door_2.tscn" id="7_m120p"]
+[ext_resource type="PackedScene" uid="uid://bdhve46x61wu3" path="res://Objects/Cabin/Interactibles/door_3.tscn" id="8_bi3uu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_eexsa"]
 size = Vector3(3, 1, 1)
@@ -167,3 +168,13 @@ invert = true
 
 [node name="Door2" parent="Cabin_Floor_walls/Doors" instance=ExtResource("7_m120p")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.44041, 1.85382, 0.493261)
+
+[node name="Door3" parent="Cabin_Floor_walls/Doors" instance=ExtResource("8_bi3uu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.959251, 1.64951, -1.2845)
+invert = true
+
+[node name="Door4" parent="Cabin_Floor_walls/Doors" instance=ExtResource("8_bi3uu")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.959251, 1.64951, 2.07277)
+
+[node name="Door5" parent="Cabin_Floor_walls/Doors" instance=ExtResource("8_bi3uu")]
+transform = Transform3D(4.56954e-08, 0, 1, 0, 1, 0, -1, 0, 4.56954e-08, -1.28708, 1.64951, 2.00013)

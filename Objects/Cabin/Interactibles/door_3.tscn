@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdhve46x61wu3"]
+
+[ext_resource type="PackedScene" uid="uid://dxg2u8vwtvfyv" path="res://Assets/Models/Door3.glb" id="1_nnq3g"]
+[ext_resource type="Script" uid="uid://wck66two2qg0" path="res://Objects/Cabin/Interactibles/door_3.gd" id="2_uuabm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uuabm"]
+albedo_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3fel"]
+albedo_color = Color(1, 0.823529, 0.478431, 1)
+metallic = 1.0
+roughness = 0.2
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nnq3g"]
+points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
+
+[sub_resource type="Animation" id="Animation_nnq3g"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uuabm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h3fel"]
+resource_name = "Close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xb0b2"]
+resource_name = "Open_invert"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rr8eq"]
+resource_name = "Close_invert"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuabm"]
+_data = {
+&"Close": SubResource("Animation_h3fel"),
+&"Close_invert": SubResource("Animation_rr8eq"),
+&"Open": SubResource("Animation_nnq3g"),
+&"Open_invert": SubResource("Animation_xb0b2"),
+&"RESET": SubResource("Animation_uuabm")
+}
+
+[node name="Door3" instance=ExtResource("1_nnq3g")]
+script = ExtResource("2_uuabm")
+
+[node name="Hinge" parent="." index="0"]
+transform = Transform3D(-5.56711e-10, 0, 0.0105526, 0, 0.04764, 0, -0.0127361, 0, -4.61271e-10, 0, 0.0341995, 1.24828)
+
+[node name="Door" parent="Hinge" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uuabm")
+
+[node name="Knob" parent="Hinge/Door" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h3fel")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Hinge/Door" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Door/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_nnq3g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_uuabm")
+}
+
+[node name="Timer" type="Timer" parent="." index="3"]
+wait_time = 0.5
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

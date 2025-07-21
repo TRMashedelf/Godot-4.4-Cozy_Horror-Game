@@ -12,6 +12,34 @@ points = PackedVector3Array(0.999841, 1, 1, 0.999841, 1, -1, -1, 1, 1, 0.999841,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m8vc3"]
 points = PackedVector3Array(-1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 0.999964, -1, 1, -1, 1, 1, 0.999964, -1, -1, 0.999964, 1, -0.302858, 1.15433, -0.594753, 1, 0.999964, 1, 0.302662, 1.15433, -0.594753, -0.302858, 1.15433, 0.594558, 0.302662, 1.15433, 0.594558)
 
+[sub_resource type="Animation" id="Animation_mt36e"]
+resource_name = "Close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.658441), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.658), Vector3(0, 0, -1.0099)]
+}
+
 [sub_resource type="Animation" id="Animation_y070b"]
 resource_name = "Open"
 length = 0.5
@@ -65,34 +93,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, -1.50479)]
-}
-
-[sub_resource type="Animation" id="Animation_mt36e"]
-resource_name = "Close"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Door:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0.658441), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Door_2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, -1.658), Vector3(0, 0, -1.0099)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e01t0"]
