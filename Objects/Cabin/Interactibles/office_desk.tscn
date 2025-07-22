@@ -1,0 +1,296 @@
+[gd_scene load_steps=24 format=3 uid="uid://v5lamf3lt1lb"]
+
+[ext_resource type="PackedScene" uid="uid://dgj53x6dqpb8q" path="res://Assets/Models/Office_Desk.glb" id="1_2shcg"]
+[ext_resource type="Script" uid="uid://c7s8qrfipf6ro" path="res://Objects/Cabin/Interactibles/office_desk.gd" id="2_07gq8"]
+[ext_resource type="Script" uid="uid://cc76wkn41655u" path="res://Objects/Cabin/Interactibles/drawer.gd" id="3_ou0kc"]
+[ext_resource type="Texture2D" uid="uid://cgu3mlbx7e2ge" path="res://Assets/Textures/rosewood_veneer1_diff_1k.png" id="3_se87u"]
+[ext_resource type="Texture2D" uid="uid://djbm37t5b7mrc" path="res://Assets/Textures/rosewood_veneer1_ao_1k.png" id="4_ubmjn"]
+[ext_resource type="Texture2D" uid="uid://dj8wbcab1bevy" path="res://Assets/Textures/rosewood_veneer1_nor_gl_1k.png" id="5_drob0"]
+[ext_resource type="Texture2D" uid="uid://cx3f0gyja4fr2" path="res://Assets/Textures/rosewood_veneer1_rough_1k.png" id="6_7cfqa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycpfu"]
+albedo_texture = ExtResource("3_se87u")
+roughness_texture = ExtResource("6_7cfqa")
+normal_enabled = true
+normal_texture = ExtResource("5_drob0")
+ao_enabled = true
+ao_texture = ExtResource("4_ubmjn")
+uv1_scale = Vector3(0.8, 0.8, 0.8)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.210225
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_07gq8"]
+points = PackedVector3Array(-1, -1, -1, 0.999538, 0.99955, 0.99955, 0.999538, 0.99955, -0.99955, 0.999988, -1, -1, 0.999988, -1, 1, -0.99955, 0.99955, 0.99955, -1, -1, 1, -0.99955, 0.99955, -0.99955)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2shcg"]
+points = PackedVector3Array(0.989483, 0.989483, 0.991205, -1, 0.999913, -0.99887, 0.999913, -1, -0.99887, -1, -1, -0.99887, 0.989456, -0.989544, 0.99118, 1, 1, -0.998963, -0.989544, 0.989456, 0.99118, -0.989544, -0.989544, 0.99118, -0.0599679, 0.239829, 1.02804, -4.3683e-05, -0.148838, 1.02041)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ou0kc"]
+points = PackedVector3Array(0.989483, 0.989483, 0.991205, -1, 0.999913, -0.99887, 0.999913, -1, -0.99887, -1, -1, -0.99887, 0.989456, -0.989544, 0.99118, 1, 1, -0.998963, -0.989544, 0.989456, 0.99118, -0.989544, -0.989544, 0.99118, -0.0599679, 0.239829, 1.02804, -4.3683e-05, -0.148838, 1.02041)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5gb58"]
+points = PackedVector3Array(0.989483, 0.989483, 0.991205, -1, 0.999913, -0.99887, 0.999913, -1, -0.99887, -1, -1, -0.99887, 0.989456, -0.989544, 0.99118, 1, 1, -0.998963, -0.989544, 0.989456, 0.99118, -0.989544, -0.989544, 0.99118, -0.0599679, 0.239829, 1.02804, -4.3683e-05, -0.148838, 1.02041)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iluno"]
+points = PackedVector3Array(0.989483, 0.989483, 0.991205, -1, 0.999913, -0.99887, 0.999913, -1, -0.99887, -1, -1, -0.99887, 0.989456, -0.989544, 0.99118, 1, 1, -0.998963, -0.989544, 0.989456, 0.99118, -0.989544, -0.989544, 0.99118, -0.0599679, 0.239829, 1.02804, -4.3683e-05, -0.148838, 1.02041)
+
+[sub_resource type="Animation" id="Animation_2shcg"]
+resource_name = "Open"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.27291, 0.110402, 0.239731), Vector3(-2.273, 0.11, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_07gq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.273, 0.11, 0.24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Drawer_001:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.273, -0.594, 0.24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Drawer_002:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.254, -0.594, 0.24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Drawer_003:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.254, 0.11, 0.24)]
+}
+
+[sub_resource type="Animation" id="Animation_ou0kc"]
+resource_name = "Close"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.273, 0.11, 1.5), Vector3(-2.27291, 0.110402, 0.239731)]
+}
+
+[sub_resource type="Animation" id="Animation_5gb58"]
+resource_name = "Open_1"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.27291, -0.593893, 0.239731), Vector3(-2.273, -0.594, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_iluno"]
+resource_name = "Close_1"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.273, -0.594, 1.5), Vector3(-2.27291, -0.593893, 0.239731)]
+}
+
+[sub_resource type="Animation" id="Animation_r6krh"]
+resource_name = "Open_2"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_002:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.25389, -0.593893, 0.239731), Vector3(2.254, -0.594, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_se87u"]
+resource_name = "Close_2"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_002:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.254, -0.594, 1.5), Vector3(2.25389, -0.593893, 0.239731)]
+}
+
+[sub_resource type="Animation" id="Animation_ubmjn"]
+resource_name = "Open_3"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_003:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.25389, 0.110402, 0.239731), Vector3(2.254, 0.11, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_drob0"]
+resource_name = "Close_3"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_003:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.254, 0.11, 1.5), Vector3(2.25389, 0.110402, 0.239731)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ou0kc"]
+_data = {
+&"Close": SubResource("Animation_ou0kc"),
+&"Close_1": SubResource("Animation_iluno"),
+&"Close_2": SubResource("Animation_se87u"),
+&"Close_3": SubResource("Animation_drob0"),
+&"Open": SubResource("Animation_2shcg"),
+&"Open_1": SubResource("Animation_5gb58"),
+&"Open_2": SubResource("Animation_r6krh"),
+&"Open_3": SubResource("Animation_ubmjn"),
+&"RESET": SubResource("Animation_07gq8")
+}
+
+[node name="Office_Desk" instance=ExtResource("1_2shcg")]
+script = ExtResource("2_07gq8")
+
+[node name="Desk" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ycpfu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_07gq8")
+
+[node name="Drawer" parent="." index="1"]
+transform = Transform3D(0.573701, 0, 0, 0, 0.33133, 0, 0, 0, 0.779434, -2.273, 0.11, 0.24)
+script = ExtResource("3_ou0kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Drawer" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drawer/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_2shcg")
+
+[node name="Drawer_001" parent="." index="2"]
+transform = Transform3D(0.573701, 0, 0, 0, 0.33133, 0, 0, 0, 0.779434, -2.273, -0.594, 0.24)
+script = ExtResource("3_ou0kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Drawer_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drawer_001/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ou0kc")
+
+[node name="Drawer_002" parent="." index="3"]
+transform = Transform3D(0.573701, 0, 0, 0, 0.33133, 0, 0, 0, 0.779434, 2.254, -0.594, 0.24)
+script = ExtResource("3_ou0kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Drawer_002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drawer_002/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_5gb58")
+
+[node name="Drawer_003" parent="." index="4"]
+transform = Transform3D(0.573701, 0, 0, 0, 0.33133, 0, 0, 0, 0.779434, 2.254, 0.11, 0.24)
+script = ExtResource("3_ou0kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Drawer_003" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drawer_003/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_iluno")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+&"": SubResource("AnimationLibrary_ou0kc")
+}
+
+[node name="Timer" type="Timer" parent="." index="6"]
+wait_time = 0.25
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

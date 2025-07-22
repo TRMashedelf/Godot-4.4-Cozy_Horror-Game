@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://belbp4kncmbne"]
+[gd_scene load_steps=10 format=3 uid="uid://belbp4kncmbne"]
 
 [ext_resource type="PackedScene" uid="uid://2rlrx88dbupn" path="res://Objects/Cabin/cabin_floor_walls.tscn" id="3_nob5q"]
 [ext_resource type="PackedScene" uid="uid://c67xicifvhqvv" path="res://Objects/Cabin/Interactibles/window.tscn" id="4_3xi38"]
@@ -8,30 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dmukrypiobadj" path="res://Objects/Cabin/Interactibles/DoubleDoor.tscn" id="6_ckmlx"]
 [ext_resource type="PackedScene" uid="uid://dsapx2rys4kd8" path="res://Objects/Cabin/Interactibles/door_2.tscn" id="7_m120p"]
 [ext_resource type="PackedScene" uid="uid://bdhve46x61wu3" path="res://Objects/Cabin/Interactibles/door_3.tscn" id="8_bi3uu"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_eexsa"]
-size = Vector3(3, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nob5q"]
-albedo_color = Color(0.240028, 0.121305, 0.000220932, 1)
-metallic = 0.02
-roughness = 0.87
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ta8yh"]
-points = PackedVector3Array(-1.45426, -0.5, -0.5, 1.45426, 0.5, 0.5, 1.45426, 0.5, -0.5, -1.45426, 0.5, 0.5, 1.45426, -0.5, 0.5, 1.45426, -0.5, -0.5, -1.45426, 0.5, -0.5, -1.45426, -0.5, 0.5)
+[ext_resource type="PackedScene" uid="uid://v5lamf3lt1lb" path="res://Objects/Cabin/Interactibles/office_desk.tscn" id="9_rtrcq"]
 
 [node name="Home" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="Desk (TEMP)" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5.8722e-08, 0, 1, 0, 1, 0, -1.3434, 0, -4.37114e-08, -2.99462, 1.08198, 3.70795)
-mesh = SubResource("BoxMesh_eexsa")
-surface_material_override/0 = SubResource("StandardMaterial3D_nob5q")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Desk (TEMP)"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk (TEMP)/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ta8yh")
 
 [node name="Cabin_Floor_walls" parent="." instance=ExtResource("3_nob5q")]
 
@@ -178,3 +158,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.9592
 
 [node name="Door5" parent="Cabin_Floor_walls/Doors" instance=ExtResource("8_bi3uu")]
 transform = Transform3D(4.56954e-08, 0, 1, 0, 1, 0, -1, 0, 4.56954e-08, -1.28708, 1.64951, 2.00013)
+
+[node name="Office_Desk" parent="." instance=ExtResource("9_rtrcq")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -3.06334, 1.16986, 3.54059)

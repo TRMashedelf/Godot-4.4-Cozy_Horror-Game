@@ -28,6 +28,7 @@ fov = 90.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.423581)
+target_position = Vector3(0, -1.25, 0)
 script = ExtResource("2_3s5on")
 
 [node name="Control" type="Control" parent="."]
