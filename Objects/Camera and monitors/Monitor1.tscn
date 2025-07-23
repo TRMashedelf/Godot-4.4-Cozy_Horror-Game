@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmlh2uecybfe6"]
+[gd_scene load_steps=7 format=3 uid="uid://cmlh2uecybfe6"]
 
 [ext_resource type="PackedScene" uid="uid://xdtlsunmye28" path="res://Assets/Models/CRT TV Monitor.glb" id="1_6c06b"]
 [ext_resource type="Script" uid="uid://ghxw3hll3a32" path="res://Objects/Camera and monitors/monitor_1.gd" id="2_mv451"]
+[ext_resource type="ArrayOccluder3D" uid="uid://6lc25orxa75m" path="res://Objects/Camera and monitors/Monitor1.occ" id="3_b63p2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b63p2"]
 albedo_color = Color(0.187176, 0.187176, 0.187176, 1)
@@ -31,3 +32,6 @@ surface_material_override/1 = SubResource("StandardMaterial3D_mv451")
 
 [node name="GGSD" parent="." index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7cmxm")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+occluder = ExtResource("3_b63p2")

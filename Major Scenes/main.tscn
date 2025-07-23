@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bueae4ug4ilik"]
+[gd_scene load_steps=10 format=3 uid="uid://bueae4ug4ilik"]
 
 [ext_resource type="Script" uid="uid://cxm31ay3wqdld" path="res://Major Scenes/main.gd" id="1_7oxdu"]
 [ext_resource type="Script" uid="uid://b2odnh707kmej" path="res://addons/DayNightCycle/DayNightCycle.gd" id="2_7oxdu"]
 [ext_resource type="PackedScene" uid="uid://dvgds0rqos8su" path="res://Player related/player.tscn" id="2_476l7"]
 [ext_resource type="Material" uid="uid://wyikf3yxoy6x" path="res://addons/DayNightCycle/Sky_Day.tres" id="2_f0s4u"]
-[ext_resource type="PackedScene" uid="uid://olioj2wisgi0" path="res://Test stuff/test_object_interactor.tscn" id="3_476l7"]
 [ext_resource type="PackedScene" uid="uid://eihb63i65s1q" path="res://GUI/settings.tscn" id="7_1mf3d"]
 [ext_resource type="Script" uid="uid://1uktbaeqswfo" path="res://GUI/ui.gd" id="7_hfan6"]
 [ext_resource type="PackedScene" uid="uid://ctdnywdqebm1d" path="res://GUI/pause_menu.tscn" id="8_hfan6"]
@@ -58,9 +57,6 @@ environment = SubResource("Environment_f0s4u")
 
 [node name="Player" parent="." instance=ExtResource("2_476l7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58811, 1.11986, -16.8036)
-
-[node name="Test Cube" parent="." instance=ExtResource("3_476l7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.940696, 1.528, -17.8302)
 
 [node name="UI" type="Control" parent="."]
 process_mode = 3

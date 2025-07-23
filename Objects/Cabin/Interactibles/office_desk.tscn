@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://v5lamf3lt1lb"]
+[gd_scene load_steps=25 format=3 uid="uid://v5lamf3lt1lb"]
 
 [ext_resource type="PackedScene" uid="uid://dgj53x6dqpb8q" path="res://Assets/Models/Office_Desk.glb" id="1_2shcg"]
 [ext_resource type="Script" uid="uid://c7s8qrfipf6ro" path="res://Objects/Cabin/Interactibles/office_desk.gd" id="2_07gq8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://djbm37t5b7mrc" path="res://Assets/Textures/rosewood_veneer1_ao_1k.png" id="4_ubmjn"]
 [ext_resource type="Texture2D" uid="uid://dj8wbcab1bevy" path="res://Assets/Textures/rosewood_veneer1_nor_gl_1k.png" id="5_drob0"]
 [ext_resource type="Texture2D" uid="uid://cx3f0gyja4fr2" path="res://Assets/Textures/rosewood_veneer1_rough_1k.png" id="6_7cfqa"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dp8x16nkoxq2p" path="res://Objects/Cabin/Interactibles/office_desk.occ" id="7_ubmjn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycpfu"]
 albedo_texture = ExtResource("3_se87u")
@@ -244,6 +245,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ycpfu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_07gq8")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Desk" index="1"]
+occluder = ExtResource("7_ubmjn")
 
 [node name="Drawer" parent="." index="1"]
 transform = Transform3D(0.573701, 0, 0, 0, 0.33133, 0, 0, 0, 0.779434, -2.273, 0.11, 0.24)

@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfkwjipf6ubmj"]
+[gd_scene load_steps=9 format=3 uid="uid://dfkwjipf6ubmj"]
 
 [ext_resource type="PackedScene" uid="uid://belbp4kncmbne" path="res://Major Scenes/home.tscn" id="1_gpjc3"]
 [ext_resource type="PackedScene" uid="uid://d30etgdp2rxgl" path="res://Major Scenes/terrain_3d.tscn" id="2_iam6h"]
 [ext_resource type="PackedScene" uid="uid://cmlh2uecybfe6" path="res://Objects/Camera and monitors/Monitor1.tscn" id="3_qy2ys"]
 [ext_resource type="Shader" uid="uid://db1l7ucexks2q" path="res://Assets/Shaders/CRT.gdshader" id="4_rf8ge"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dlumhsplpgyh5" path="res://Major Scenes/map.occ" id="5_rf8ge"]
 [ext_resource type="PackedScene" uid="uid://v80rcwht5qai" path="res://Objects/Nature/tree_1.tscn" id="6_fuc2v"]
 [ext_resource type="PackedScene" uid="uid://ot4r6vjy8nk7" path="res://Objects/Nature/tree_2.tscn" id="7_wwrr6"]
 
@@ -110,9 +109,6 @@ custom_minimum_size = Vector2(640, 400)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("5_rf8ge")
 
 [node name="Terrain3D" parent="." instance=ExtResource("2_iam6h")]
 

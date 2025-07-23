@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://2rlrx88dbupn"]
+[gd_scene load_steps=30 format=3 uid="uid://2rlrx88dbupn"]
 
 [ext_resource type="PackedScene" uid="uid://buy2pkr01d1rq" path="res://Assets/Models/Cabin_Floor_walls.glb" id="1_sfb8m"]
 [ext_resource type="Texture2D" uid="uid://dcfnqy7owuanx" path="res://Assets/Textures/painted_plaster_wall_diff_2k.png" id="2_5lnuw"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d2nysya3aux70" path="res://Assets/Textures/beige_wall_002_ao_2k.png" id="20_sftk2"]
 [ext_resource type="Texture2D" uid="uid://b07wks5spp2c7" path="res://Assets/Textures/beige_wall_002_nor_gl_2k.png" id="21_ghh3o"]
 [ext_resource type="Texture2D" uid="uid://ch5fhb16ne1fy" path="res://Assets/Textures/beige_wall_002_rough_2k.png" id="22_17fm7"]
+[ext_resource type="ArrayOccluder3D" uid="uid://betr5basl8s0f" path="res://Objects/Cabin/cabin_floor_walls.occ" id="23_sftk2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpagy"]
 albedo_texture = ExtResource("2_5lnuw")
@@ -100,3 +101,6 @@ surface_material_override/5 = SubResource("StandardMaterial3D_hud4s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_walls/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_5u8f2")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="1"]
+occluder = ExtResource("23_sftk2")
