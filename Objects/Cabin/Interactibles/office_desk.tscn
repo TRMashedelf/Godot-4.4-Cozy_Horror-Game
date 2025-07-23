@@ -34,6 +34,74 @@ points = PackedVector3Array(0.989483, 0.989483, 0.991205, -1, 0.999913, -0.99887
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iluno"]
 points = PackedVector3Array(0.989483, 0.989483, 0.991205, -1, 0.999913, -0.99887, 0.999913, -1, -0.99887, -1, -1, -0.99887, 0.989456, -0.989544, 0.99118, 1, 1, -0.998963, -0.989544, 0.989456, 0.99118, -0.989544, -0.989544, 0.99118, -0.0599679, 0.239829, 1.02804, -4.3683e-05, -0.148838, 1.02041)
 
+[sub_resource type="Animation" id="Animation_ou0kc"]
+resource_name = "Close"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.273, 0.11, 1.5), Vector3(-2.27291, 0.110402, 0.239731)]
+}
+
+[sub_resource type="Animation" id="Animation_iluno"]
+resource_name = "Close_1"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.273, -0.594, 1.5), Vector3(-2.27291, -0.593893, 0.239731)]
+}
+
+[sub_resource type="Animation" id="Animation_se87u"]
+resource_name = "Close_2"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_002:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.254, -0.594, 1.5), Vector3(2.25389, -0.593893, 0.239731)]
+}
+
+[sub_resource type="Animation" id="Animation_drob0"]
+resource_name = "Close_3"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_003:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.254, 0.11, 1.5), Vector3(2.25389, 0.110402, 0.239731)]
+}
+
 [sub_resource type="Animation" id="Animation_2shcg"]
 resource_name = "Open"
 length = 0.25
@@ -49,6 +117,57 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-2.27291, 0.110402, 0.239731), Vector3(-2.273, 0.11, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_5gb58"]
+resource_name = "Open_1"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.27291, -0.593893, 0.239731), Vector3(-2.273, -0.594, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_r6krh"]
+resource_name = "Open_2"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_002:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.25389, -0.593893, 0.239731), Vector3(2.254, -0.594, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_ubmjn"]
+resource_name = "Open_3"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drawer_003:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.25389, 0.110402, 0.239731), Vector3(2.254, 0.11, 1.5)]
 }
 
 [sub_resource type="Animation" id="Animation_07gq8"]
@@ -100,125 +219,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(2.254, 0.11, 0.24)]
-}
-
-[sub_resource type="Animation" id="Animation_ou0kc"]
-resource_name = "Close"
-length = 0.25
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drawer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-2.273, 0.11, 1.5), Vector3(-2.27291, 0.110402, 0.239731)]
-}
-
-[sub_resource type="Animation" id="Animation_5gb58"]
-resource_name = "Open_1"
-length = 0.25
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drawer_001:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-2.27291, -0.593893, 0.239731), Vector3(-2.273, -0.594, 1.5)]
-}
-
-[sub_resource type="Animation" id="Animation_iluno"]
-resource_name = "Close_1"
-length = 0.25
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drawer_001:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-2.273, -0.594, 1.5), Vector3(-2.27291, -0.593893, 0.239731)]
-}
-
-[sub_resource type="Animation" id="Animation_r6krh"]
-resource_name = "Open_2"
-length = 0.25
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drawer_002:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(2.25389, -0.593893, 0.239731), Vector3(2.254, -0.594, 1.5)]
-}
-
-[sub_resource type="Animation" id="Animation_se87u"]
-resource_name = "Close_2"
-length = 0.25
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drawer_002:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(2.254, -0.594, 1.5), Vector3(2.25389, -0.593893, 0.239731)]
-}
-
-[sub_resource type="Animation" id="Animation_ubmjn"]
-resource_name = "Open_3"
-length = 0.25
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drawer_003:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(2.25389, 0.110402, 0.239731), Vector3(2.254, 0.11, 1.5)]
-}
-
-[sub_resource type="Animation" id="Animation_drob0"]
-resource_name = "Close_3"
-length = 0.25
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drawer_003:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(2.254, 0.11, 1.5), Vector3(2.25389, 0.110402, 0.239731)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ou0kc"]

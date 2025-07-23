@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://h0eehmbj8he3"]
+
+[ext_resource type="PackedScene" uid="uid://crlda332ddqox" path="res://Assets/Models/Coffee_table.glb" id="1_ysfp0"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cmwun4ugp152g" path="res://Objects/Cabin/Furniture/coffee_table.occ" id="2_bvcmh"]
+[ext_resource type="Texture2D" uid="uid://cgu3mlbx7e2ge" path="res://Assets/Textures/rosewood_veneer1_diff_1k.png" id="2_fc6qr"]
+[ext_resource type="Texture2D" uid="uid://djbm37t5b7mrc" path="res://Assets/Textures/rosewood_veneer1_ao_1k.png" id="3_jn7xt"]
+[ext_resource type="Texture2D" uid="uid://dj8wbcab1bevy" path="res://Assets/Textures/rosewood_veneer1_nor_gl_1k.png" id="4_rulca"]
+[ext_resource type="Texture2D" uid="uid://cx3f0gyja4fr2" path="res://Assets/Textures/rosewood_veneer1_rough_1k.png" id="5_o617n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2d2oe"]
+albedo_texture = ExtResource("2_fc6qr")
+roughness_texture = ExtResource("5_o617n")
+normal_enabled = true
+normal_texture = ExtResource("4_rulca")
+ao_enabled = true
+ao_texture = ExtResource("3_jn7xt")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.210225
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bvcmh"]
+points = PackedVector3Array(-1, 0.484878, -1, -0.950078, -1.30912, -0.975137, -1, 0.484878, 1, -1, 0.962253, -1, 1, 0.484878, -1, -0.950078, -1.30912, 0.974941, 0.949883, -1.30912, -0.975137, 1, 0.484878, 1, -1, 0.962253, 1, -0.997259, 0.976493, -0.997259, 1, 0.962253, -1, 0.949883, -1.30912, 0.974941, 1, 0.962253, 1, -0.997259, 0.976493, 0.997063, -0.989037, 0.988925, -0.989037, 0.997063, 0.976493, -0.997259, 0.997063, 0.976493, 0.997063, -0.989037, 0.988925, 0.988841, -0.976703, 0.997062, -0.976703, 0.988841, 0.988925, -0.989037, 0.988841, 0.988925, 0.988841, -0.976703, 0.997062, 0.976507, -0.962412, 1, -0.962412, 0.976507, 0.997062, -0.976703, 0.976507, 0.997062, 0.976507, -0.962412, 1, 0.962216, 0.962216, 1, -0.962412, 0.962216, 1, 0.962216)
+
+[node name="Coffee_table" instance=ExtResource("1_ysfp0")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="Coffee table" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2d2oe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Coffee table" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coffee table/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_bvcmh")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="1"]
+occluder = ExtResource("2_bvcmh")

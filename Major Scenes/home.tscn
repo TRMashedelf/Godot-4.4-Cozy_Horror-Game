@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://belbp4kncmbne"]
+[gd_scene load_steps=11 format=3 uid="uid://belbp4kncmbne"]
 
 [ext_resource type="PackedScene" uid="uid://2rlrx88dbupn" path="res://Objects/Cabin/cabin_floor_walls.tscn" id="3_nob5q"]
 [ext_resource type="PackedScene" uid="uid://c67xicifvhqvv" path="res://Objects/Cabin/Interactibles/window.tscn" id="4_3xi38"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsapx2rys4kd8" path="res://Objects/Cabin/Interactibles/door_2.tscn" id="7_m120p"]
 [ext_resource type="PackedScene" uid="uid://bdhve46x61wu3" path="res://Objects/Cabin/Interactibles/door_3.tscn" id="8_bi3uu"]
 [ext_resource type="PackedScene" uid="uid://v5lamf3lt1lb" path="res://Objects/Cabin/Interactibles/office_desk.tscn" id="9_rtrcq"]
+[ext_resource type="PackedScene" uid="uid://h0eehmbj8he3" path="res://Objects/Cabin/Furniture/coffee_table.tscn" id="10_xbu0t"]
 
 [node name="Home" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -159,5 +160,14 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.9592
 [node name="Door5" parent="Cabin_Floor_walls/Doors" instance=ExtResource("8_bi3uu")]
 transform = Transform3D(4.56954e-08, 0, 1, 0, 1, 0, -1, 0, 4.56954e-08, -1.28708, 1.64951, 2.00013)
 
-[node name="Office_Desk" parent="." instance=ExtResource("9_rtrcq")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -3.06334, 1.16986, 3.54059)
+[node name="Living_Dining_Room" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90263, 1.64843, -2.6595)
+
+[node name="Coffee_table" parent="Living_Dining_Room" instance=ExtResource("10_xbu0t")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -0.209581, -0.633168, -0.372963)
+
+[node name="Office_Room" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15604, 1.64677, 3.29478)
+
+[node name="Office_Desk" parent="Office_Room" instance=ExtResource("9_rtrcq")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 1.0927, -0.476907, 0.245812)
