@@ -166,10 +166,10 @@ transform = Transform3D(4.56954e-08, 0, 1, 0, 1, 0, -1, 0, 4.56954e-08, -1.28708
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90263, 1.64843, -2.6595)
 
 [node name="Coffee_table" parent="Living_Dining_Room" instance=ExtResource("10_xbu0t")]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -0.209581, -0.633168, -1.138)
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -0.482826, -0.633168, -1.138)
 
 [node name="Large_sofa" parent="Living_Dining_Room" instance=ExtResource("10_r1k46")]
-transform = Transform3D(-2.18557e-08, 0, 0.429, 0, 0.7, 0, -0.5, 0, -1.87522e-08, -0.194904, -0.860086, 0.915936)
+transform = Transform3D(-2.18557e-08, 0, 0.429, 0, 0.7, 0, -0.5, 0, -1.87522e-08, -0.441819, -0.860086, 0.915936)
 
 [node name="Office_Room" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15604, 1.64677, 3.29478)
