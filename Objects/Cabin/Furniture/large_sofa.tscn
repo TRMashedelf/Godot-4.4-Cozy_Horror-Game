@@ -53,12 +53,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dccf8")
 surface_material_override/0 = SubResource("StandardMaterial3D_dccf8")
 
 [node name="Pillow_003" parent="." index="4"]
+transform = Transform3D(0.0284121, 0.217967, 0, -0.425604, 0.0145508, 0, 0, 0, 0.7698, -0.348149, 0.860556, -1.52983)
 surface_material_override/0 = SubResource("StandardMaterial3D_dccf8")
 
 [node name="Pillow_004" parent="." index="5"]
+transform = Transform3D(0.0284121, 0.217967, 0, -0.425604, 0.0145508, 0, 0, 0, 0.7698, -0.348149, 0.860556, 0.01167)
 surface_material_override/0 = SubResource("StandardMaterial3D_dccf8")
 
 [node name="Pillow_005" parent="." index="6"]
+transform = Transform3D(0.0284121, 0.217967, 0, -0.425604, 0.0145508, 0, 0, 0, 0.7698, -0.348149, 0.860556, 1.55077)
 surface_material_override/0 = SubResource("StandardMaterial3D_dccf8")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="7"]
