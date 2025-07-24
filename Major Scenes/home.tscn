@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://belbp4kncmbne"]
+[gd_scene load_steps=13 format=3 uid="uid://belbp4kncmbne"]
 
 [ext_resource type="PackedScene" uid="uid://2rlrx88dbupn" path="res://Objects/Cabin/cabin_floor_walls.tscn" id="3_nob5q"]
 [ext_resource type="PackedScene" uid="uid://c67xicifvhqvv" path="res://Objects/Cabin/Interactibles/window.tscn" id="4_3xi38"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsapx2rys4kd8" path="res://Objects/Cabin/Interactibles/door_2.tscn" id="7_m120p"]
 [ext_resource type="PackedScene" uid="uid://bdhve46x61wu3" path="res://Objects/Cabin/Interactibles/door_3.tscn" id="8_bi3uu"]
 [ext_resource type="PackedScene" uid="uid://v5lamf3lt1lb" path="res://Objects/Cabin/Interactibles/office_desk.tscn" id="9_rtrcq"]
+[ext_resource type="PackedScene" uid="uid://dljkrfva1bews" path="res://Objects/Cabin/Furniture/large_sofa.tscn" id="10_r1k46"]
 [ext_resource type="PackedScene" uid="uid://h0eehmbj8he3" path="res://Objects/Cabin/Furniture/coffee_table.tscn" id="10_xbu0t"]
 [ext_resource type="PackedScene" uid="uid://olioj2wisgi0" path="res://Test stuff/test_object_interactor.tscn" id="11_1q4l2"]
 
@@ -166,6 +167,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90263, 1.64843, -2.6595)
 
 [node name="Coffee_table" parent="Living_Dining_Room" instance=ExtResource("10_xbu0t")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -0.209581, -0.633168, -1.138)
+
+[node name="Large_sofa" parent="Living_Dining_Room" instance=ExtResource("10_r1k46")]
+transform = Transform3D(-2.18557e-08, 0, 0.429, 0, 0.7, 0, -0.5, 0, -1.87522e-08, -0.194904, -0.860086, 0.915936)
 
 [node name="Office_Room" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15604, 1.64677, 3.29478)
