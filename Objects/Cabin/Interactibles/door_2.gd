@@ -3,10 +3,8 @@ extends Node3D
 @onready var animPlayer = $AnimationPlayer
 @onready var timer = $Timer
 
-@export var Is_Open: bool
+@export var Is_Open: bool = true
 
-func _ready():
-	update(Is_Open)
 
 func interact(interaction: String) -> void:
 	if interaction == "left_click":

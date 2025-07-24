@@ -414,7 +414,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -3.14159, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kby3i"]
@@ -448,7 +448,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gimxh")
 surface_material_override/0 = SubResource("StandardMaterial3D_tjrgg")
 
 [node name="Hinge2" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(-0.0555657, 0, -1.40869e-07, 0, 0.244502, 0, 1.40869e-07, 0, -0.0555657, 0, 0, -3.98894)
+transform = Transform3D(0.0555657, 0, 0, 0, 0.244502, 0, 0, 0, 0.0555657, 0, 0, -3.98894)
 mesh = SubResource("ArrayMesh_lhnac")
 skeleton = NodePath("")
 

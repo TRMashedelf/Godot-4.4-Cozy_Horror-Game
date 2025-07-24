@@ -5,8 +5,7 @@ extends Node3D
 
 @export var Is_Open: bool
 
-func _ready():
-	update(Is_Open)
+
 
 func interact(interaction: String) -> void:
 	if interaction == "left_click":

@@ -9,11 +9,7 @@ extends Node3D
 
 
 
-func _ready():
-	update(Drawer.Is_Open, Drawer)
-	update(Drawer1.Is_Open, Drawer1)
-	update(Drawer2.Is_Open, Drawer2)
-	update(Drawer3.Is_Open, Drawer3)
+
 
 
 func update(On_off: bool, Target: Node3D):

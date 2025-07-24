@@ -14,37 +14,6 @@ roughness = 0.2
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nnq3g"]
 points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
 
-[sub_resource type="Animation" id="Animation_nnq3g"]
-resource_name = "Open"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hinge:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_uuabm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hinge:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_h3fel"]
 resource_name = "Close"
 length = 0.5
@@ -59,22 +28,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_xb0b2"]
-resource_name = "Open_invert"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hinge:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_rr8eq"]
@@ -93,6 +46,53 @@ tracks/0/keys = {
 "values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_nnq3g"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xb0b2"]
+resource_name = "Open_invert"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uuabm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uuabm"]
 _data = {
 &"Close": SubResource("Animation_h3fel"),
@@ -106,7 +106,7 @@ _data = {
 script = ExtResource("2_uuabm")
 
 [node name="Hinge" parent="." index="0"]
-transform = Transform3D(-5.56711e-10, 0, 0.0105526, 0, 0.04764, 0, -0.0127361, 0, -4.61271e-10, 0, 0.0341995, 1.24828)
+transform = Transform3D(0.0127361, 0, 0, 0, 0.04764, 0, 0, 0, 0.0105526, 0, 0.0341995, 1.24828)
 
 [node name="Door" parent="Hinge" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_uuabm")
