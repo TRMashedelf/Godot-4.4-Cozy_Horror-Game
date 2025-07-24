@@ -3,18 +3,18 @@ extends Node
 @onready var config = ConfigFile.new()
 @onready var config_savepath = ProjectSettings.globalize_path("user://settings.cfg")
 
-@export var player_FOV: float
-@export var player_mouseSensitivity: float
+@export var player_FOV: float = 90.0
+@export var player_mouseSensitivity: float = 40.0
 
-@export var window_type: String
-@export var window_resolution: String
+@export var window_type: String = "borderless"
+@export var window_resolution: String = "1920x1080"
 
-@export var audio_masterVolume: int
-@export var audio_SFXVolume: int
-@export var audio_ambientVolume: int
-@export var audio_musicVolume: int
+@export var audio_masterVolume: int = 100
+@export var audio_SFXVolume: int = 100
+@export var audio_ambientVolume: int = 100
+@export var audio_musicVolume: int = 100
 
-@export var view_distance: float
+@export var view_distance: float = 75.0
 
 enum MenuState { NONE, MAIN, PAUSE, SETTINGS }
 @export var current_menu := MenuState.NONE

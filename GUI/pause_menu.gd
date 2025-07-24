@@ -1,6 +1,10 @@
 extends Control
 
 @onready var ui_controller = get_parent()
+@onready var version_label = $CenterContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/Version_Label
+
+func _ready():
+	version_label.text = "v" + ProjectSettings.get_setting("application/config/version")
 
 
 func _on_resume_button_pressed() -> void:
